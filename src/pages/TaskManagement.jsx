@@ -2,6 +2,7 @@ import { Box, Heading, VStack, Text, Button, Input, Select, useBreakpointValue }
 import { useState, useEffect } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import io from "socket.io-client";
+import { notify } from "../components/Notification.jsx";
 
 const socket = io("http://localhost:3000");
 
@@ -25,6 +26,7 @@ const TaskManagement = () => {
     setTasks(updatedTasks);
     setNewTask("");
     socket.emit("updateTasks", updatedTasks);
+    notify("Task added successfully!", "success");
   };
 
   const handleDragEnd = (result) => {
@@ -36,6 +38,7 @@ const TaskManagement = () => {
 
     setTasks(updatedTasks);
     socket.emit("updateTasks", updatedTasks);
+    notify("Task order updated!", "info");
   };
 
   const filteredTasks = tasks.filter((task) => filter === "all" || task.status === filter);

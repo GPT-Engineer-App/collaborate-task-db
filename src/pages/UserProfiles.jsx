@@ -1,12 +1,13 @@
 import { Box, Heading, VStack, Text, Input, Button, useBreakpointValue } from "@chakra-ui/react";
 import { useState } from "react";
+import { notify } from "../components/Notification.jsx";
 
 const UserProfiles = () => {
   const [profile, setProfile] = useState({ avatar: "", bio: "" });
 
   const handleUpdateProfile = () => {
-    // Placeholder for update logic
     console.log("Profile updated:", profile);
+    notify("Profile updated successfully!", "success");
   };
 
   return (

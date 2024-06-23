@@ -1,5 +1,6 @@
 import { Box, Heading, VStack, Text, Input, Button, useBreakpointValue } from "@chakra-ui/react";
 import { useState } from "react";
+import { notify } from "../components/Notification.jsx";
 
 const TagManagement = () => {
   const [tags, setTags] = useState([]);
@@ -8,6 +9,7 @@ const TagManagement = () => {
   const handleAddTag = () => {
     setTags([...tags, newTag]);
     setNewTag("");
+    notify("Tag added successfully!", "success");
   };
 
   return (

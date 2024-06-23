@@ -1,5 +1,6 @@
 import { Box, Heading, VStack, Text, Input, Button, useBreakpointValue } from "@chakra-ui/react";
 import { useState } from "react";
+import { notify } from "../components/Notification.jsx";
 
 const CategoryManagement = () => {
   const [categories, setCategories] = useState([]);
@@ -8,6 +9,7 @@ const CategoryManagement = () => {
   const handleAddCategory = () => {
     setCategories([...categories, newCategory]);
     setNewCategory("");
+    notify("Category added successfully!", "success");
   };
 
   return (

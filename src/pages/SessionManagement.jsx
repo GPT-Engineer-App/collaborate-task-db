@@ -1,5 +1,6 @@
 import { Box, Heading, VStack, Text, Input, Button, useBreakpointValue } from "@chakra-ui/react";
 import { useState } from "react";
+import { notify } from "../components/Notification.jsx";
 
 const SessionManagement = () => {
   const [sessions, setSessions] = useState([]);
@@ -8,6 +9,7 @@ const SessionManagement = () => {
   const handleAddSession = () => {
     setSessions([...sessions, newSession]);
     setNewSession("");
+    notify("Session added successfully!", "success");
   };
 
   return (
