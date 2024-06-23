@@ -1,4 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar.jsx";
+import Sidebar from "./components/Sidebar.jsx";
+import { Box } from "@chakra-ui/react";
 import Index from "./pages/Index.jsx";
 import DatabaseUsabilityAnalysis from "./pages/DatabaseUsabilityAnalysis.jsx";
 import DatabaseOptimization from "./pages/DatabaseOptimization.jsx";
@@ -15,20 +18,26 @@ import CategoryManagement from "./pages/CategoryManagement.jsx";
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route exact path="/" element={<Index />} />
-      <Route path="/database-usability-analysis" element={<DatabaseUsabilityAnalysis />} />
-      <Route path="/database-optimization" element={<DatabaseOptimization />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/task-management" element={<TaskManagement />} />
-        <Route path="/user-profiles" element={<UserProfiles />} />
-        <Route path="/group-management" element={<GroupManagement />} />
-        <Route path="/file-management" element={<FileManagement />} />
-        <Route path="/comments-section" element={<CommentsSection />} />
-        <Route path="/tag-management" element={<TagManagement />} />
-        <Route path="/session-management" element={<SessionManagement />} />
-        <Route path="/category-management" element={<CategoryManagement />} />
-      </Routes>
+      <Navbar />
+      <Box display="flex">
+        <Sidebar />
+        <Box flex="1" ml="250px">
+          <Routes>
+            <Route exact path="/" element={<Index />} />
+            <Route path="/database-usability-analysis" element={<DatabaseUsabilityAnalysis />} />
+            <Route path="/database-optimization" element={<DatabaseOptimization />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/task-management" element={<TaskManagement />} />
+            <Route path="/user-profiles" element={<UserProfiles />} />
+            <Route path="/group-management" element={<GroupManagement />} />
+            <Route path="/file-management" element={<FileManagement />} />
+            <Route path="/comments-section" element={<CommentsSection />} />
+            <Route path="/tag-management" element={<TagManagement />} />
+            <Route path="/session-management" element={<SessionManagement />} />
+            <Route path="/category-management" element={<CategoryManagement />} />
+          </Routes>
+        </Box>
+      </Box>
     </Router>
   );
 }
