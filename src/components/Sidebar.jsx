@@ -1,5 +1,5 @@
-import { Box, VStack, Link, Button, Collapse, useDisclosure } from "@chakra-ui/react";
-import { Link as RouterLink } from "react-router-dom";
+import { Box, VStack, Button, Collapse, useDisclosure } from "@chakra-ui/react";
+import SidebarLink from "./SidebarLink.jsx";
 
 const Sidebar = () => {
   const { isOpen, onToggle } = useDisclosure();
@@ -12,13 +12,13 @@ const Sidebar = () => {
         </Button>
         <Collapse in={isOpen} animateOpacity>
           <VStack align="start" spacing={2}>
-            <Link as={RouterLink} to="/task-management?filter=category" width="100%">Filter by Category</Link>
-            <Link as={RouterLink} to="/task-management?filter=priority" width="100%">Filter by Priority</Link>
-            <Link as={RouterLink} to="/task-management?filter=status" width="100%">Filter by Status</Link>
+            <SidebarLink to="/task-management?filter=category">Filter by Category</SidebarLink>
+            <SidebarLink to="/task-management?filter=priority">Filter by Priority</SidebarLink>
+            <SidebarLink to="/task-management?filter=status">Filter by Status</SidebarLink>
           </VStack>
         </Collapse>
-        <Link as={RouterLink} to="/recent-activities" width="100%">Recent Activities</Link>
-        <Link as={RouterLink} to="/notifications" width="100%">Notifications</Link>
+        <SidebarLink to="/recent-activities">Recent Activities</SidebarLink>
+        <SidebarLink to="/notifications">Notifications</SidebarLink>
       </VStack>
     </Box>
   );
