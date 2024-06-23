@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { GoogleDrivePicker } from "react-google-drive-picker";
-import { Box, Button, Text } from "@chakra-ui/react";
+import { Box, Button, Text, useBreakpointValue } from "@chakra-ui/react";
 
 const GoogleDriveIntegration = () => {
   const [files, setFiles] = useState([]);
@@ -10,7 +10,7 @@ const GoogleDriveIntegration = () => {
   };
 
   return (
-    <Box p={4} borderWidth={1} borderRadius="lg">
+    <Box p={useBreakpointValue({ base: 2, md: 4 })} borderWidth={1} borderRadius="lg">
       <GoogleDrivePicker
         clientId="YOUR_GOOGLE_CLIENT_ID"
         developerKey="YOUR_GOOGLE_DEVELOPER_KEY"
@@ -22,7 +22,7 @@ const GoogleDriveIntegration = () => {
         authImmediate={false}
         viewId={"DOCS"}
       >
-        <Button colorScheme="blue">Select Files from Google Drive</Button>
+        <Button colorScheme="blue" size={useBreakpointValue({ base: "sm", md: "md" })}>Select Files from Google Drive</Button>
       </GoogleDrivePicker>
       <Box mt={4}>
         {files.map((file, index) => (

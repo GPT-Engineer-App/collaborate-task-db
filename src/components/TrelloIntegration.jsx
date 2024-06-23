@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { TrelloBoard } from "react-trello";
-import { Box, Button, Input, VStack, Text } from "@chakra-ui/react";
+import { Box, Button, Input, VStack, useBreakpointValue } from "@chakra-ui/react";
 
 const TrelloIntegration = () => {
   const [boardData, setBoardData] = useState({
@@ -32,7 +32,7 @@ const TrelloIntegration = () => {
   };
 
   return (
-    <Box p={4} borderWidth={1} borderRadius="lg">
+    <Box p={useBreakpointValue({ base: 2, md: 4 })} borderWidth={1} borderRadius="lg">
       <TrelloBoard data={boardData} draggable />
       <VStack spacing={4} align="start" mt={4}>
         <Input
@@ -43,10 +43,12 @@ const TrelloIntegration = () => {
               e.target.value = "";
             }
           }}
+          size={useBreakpointValue({ base: "sm", md: "md" })}
         />
         <Button
           colorScheme="blue"
           onClick={() => handleAddCard("lane1", "New Card")}
+          size={useBreakpointValue({ base: "sm", md: "md" })}
         >
           Add Card to To Do
         </Button>
