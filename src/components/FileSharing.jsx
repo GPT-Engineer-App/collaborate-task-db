@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, VStack, Input, Button, Text } from "@chakra-ui/react";
+import { Box, VStack, Input, Button, Text, useBreakpointValue } from "@chakra-ui/react";
 
 const FileSharing = () => {
   const [files, setFiles] = useState([]);
@@ -17,7 +17,7 @@ const FileSharing = () => {
   };
 
   return (
-    <Box p={4} borderWidth={1} borderRadius="lg">
+    <Box p={useBreakpointValue({ base: 4, md: 8 })} borderWidth={1} borderRadius="lg">
       <VStack spacing={4} align="start">
         {files.map((file, index) => (
           <Text key={index}>{file.name}</Text>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import io from "socket.io-client";
-import { Box, VStack, Input, Button, Text } from "@chakra-ui/react";
+import { Box, VStack, Input, Button, Text, useBreakpointValue } from "@chakra-ui/react";
 
 const socket = io("http://localhost:3000");
 
@@ -24,7 +24,7 @@ const Chat = () => {
   };
 
   return (
-    <Box p={4} borderWidth={1} borderRadius="lg">
+    <Box p={useBreakpointValue({ base: 4, md: 8 })} borderWidth={1} borderRadius="lg">
       <VStack spacing={4} align="start">
         {messages.map((message, index) => (
           <Text key={index}>{message}</Text>
