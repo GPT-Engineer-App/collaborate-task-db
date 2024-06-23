@@ -15,6 +15,9 @@ import CommentsSection from "./pages/CommentsSection.jsx";
 import TagManagement from "./pages/TagManagement.jsx";
 import SessionManagement from "./pages/SessionManagement.jsx";
 import CategoryManagement from "./pages/CategoryManagement.jsx";
+import Chat from "./components/Chat.jsx";
+import FileSharing from "./components/FileSharing.jsx";
+import CollaborativeEditor from "./components/CollaborativeEditor.jsx";
 
 function App() {
   return (
@@ -36,6 +39,9 @@ function App() {
             <Route path="/tag-management" element={<TagManagement />} />
             <Route path="/session-management" element={<SessionManagement />} />
             <Route path="/category-management" element={<CategoryManagement />} />
+            <Route path="/chat" element={<Chat />} />
+            <Route path="/file-sharing" element={<FileSharing />} />
+            <Route path="/collaborative-editor" element={<CollaborativeEditor />} />
           </Routes>
         </Box>
       </Box>
