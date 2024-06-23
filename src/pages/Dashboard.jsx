@@ -1,4 +1,5 @@
 import { Box, Heading, VStack, Text, useBreakpointValue, SimpleGrid, Stat, StatLabel, StatNumber, StatHelpText, StatArrow, Divider } from "@chakra-ui/react";
+import { useEffect } from "react";
 import { notify } from "../components/Notification.jsx";
 import { Link } from "react-router-dom";
 
