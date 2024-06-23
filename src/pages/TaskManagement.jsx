@@ -1,4 +1,4 @@
-import { Box, Heading, VStack, Text, Button, Input, Select } from "@chakra-ui/react";
+import { Box, Heading, VStack, Text, Button, Input, Select, useBreakpointValue } from "@chakra-ui/react";
 import { useState } from "react";
 
 const TaskManagement = () => {
@@ -11,7 +11,7 @@ const TaskManagement = () => {
   };
 
   return (
-    <Box p={4}>
+    <Box p={useBreakpointValue({ base: 4, md: 8 })}>
       <Heading as="h1" mb={6}>Task Management</Heading>
       <VStack spacing={4} align="start">
         <Input placeholder="New Task" value={newTask} onChange={(e) => setNewTask(e.target.value)} />

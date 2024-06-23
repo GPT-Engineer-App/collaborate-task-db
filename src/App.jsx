@@ -1,4 +1,5 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { useBreakpointValue } from "@chakra-ui/react";
 import Navbar from "./components/Navbar.jsx";
 import Sidebar from "./components/Sidebar.jsx";
 import { Box } from "@chakra-ui/react";
@@ -21,7 +22,7 @@ function App() {
       <Navbar />
       <Box display="flex">
         <Sidebar />
-        <Box flex="1" ml="250px">
+        <Box flex="1" ml={useBreakpointValue({ base: "0", md: "250px" })}>
           <Routes>
             <Route exact path="/" element={<Index />} />
             <Route path="/database-usability-analysis" element={<DatabaseUsabilityAnalysis />} />

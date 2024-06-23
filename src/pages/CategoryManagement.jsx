@@ -1,4 +1,4 @@
-import { Box, Heading, VStack, Text, Input, Button } from "@chakra-ui/react";
+import { Box, Heading, VStack, Text, Input, Button, useBreakpointValue } from "@chakra-ui/react";
 import { useState } from "react";
 
 const CategoryManagement = () => {
@@ -11,7 +11,7 @@ const CategoryManagement = () => {
   };
 
   return (
-    <Box p={4}>
+    <Box p={useBreakpointValue({ base: 4, md: 8 })}>
       <Heading as="h1" mb={6}>Category Management</Heading>
       <VStack spacing={4} align="start">
         <Input placeholder="New Category" value={newCategory} onChange={(e) => setNewCategory(e.target.value)} />
