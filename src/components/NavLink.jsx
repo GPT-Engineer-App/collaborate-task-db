@@ -8,6 +8,8 @@ const NavLink = ({ to, children }) => {
       to={to} 
       mx={{ base: 1, md: 2 }} 
       fontSize={{ base: "sm", md: "md" }}
+      _hover={{ textDecoration: "underline", color: "blue.300" }}
+      transition="color 0.2s"
     >
       {children}
     </Link>

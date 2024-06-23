@@ -22,7 +22,7 @@ const Sidebar = () => {
   };
 
   return (
-    <Box bg="gray.100" width={isMobile ? "100%" : "250px"} position="fixed" top="60px" bottom="0" overflowY="auto">
+    <Box bg="gray.100" width={isMobile ? "100%" : "250px"} position="fixed" top="60px" bottom="0" overflowY="auto" boxShadow="md">
       <VStack align="start" p={4}>
         {isMobile && (
           <IconButton
@@ -50,8 +50,8 @@ const Sidebar = () => {
                 <Button colorScheme="blue" onClick={handleSearch} width="100%">Search</Button>
               </VStack>
             </Collapse>
-            <SidebarLink to="/recent-activities">Recent Activities</SidebarLink>
-            <SidebarLink to="/notifications">Notifications</SidebarLink>
+            <SidebarLink to="/recent-activities" _hover={{ bg: "gray.200", transition: "background-color 0.3s" }}>Recent Activities</SidebarLink>
+            <SidebarLink to="/notifications" _hover={{ bg: "gray.200", transition: "background-color 0.3s" }}>Notifications</SidebarLink>
           </VStack>
         </Collapse>
       </VStack>
