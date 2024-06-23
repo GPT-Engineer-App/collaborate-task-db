@@ -1,5 +1,6 @@
 import { Box, Heading, VStack, Text, Input, Button, useBreakpointValue } from "@chakra-ui/react";
 import { useState } from "react";
+import { notify } from "../components/Notification.jsx";
 
 const CommentsSection = () => {
   const [comments, setComments] = useState([]);
@@ -8,6 +9,7 @@ const CommentsSection = () => {
   const handleAddComment = () => {
     setComments([...comments, newComment]);
     setNewComment("");
+    notify("Comment added successfully!", "success");
   };
 
   return (

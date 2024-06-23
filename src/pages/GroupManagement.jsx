@@ -1,5 +1,6 @@
 import { Box, Heading, VStack, Text, Input, Button, useBreakpointValue } from "@chakra-ui/react";
 import { useState } from "react";
+import { notify } from "../components/Notification.jsx";
 
 const GroupManagement = () => {
   const [groups, setGroups] = useState([]);
@@ -8,6 +9,7 @@ const GroupManagement = () => {
   const handleAddGroup = () => {
     setGroups([...groups, newGroup]);
     setNewGroup("");
+    notify("Group added successfully!", "success");
   };
 
   return (

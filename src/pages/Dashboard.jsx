@@ -1,7 +1,11 @@
 import { Box, Heading, VStack, Text, useBreakpointValue, SimpleGrid, Stat, StatLabel, StatNumber, StatHelpText, StatArrow, Divider } from "@chakra-ui/react";
+import { notify } from "../components/Notification.jsx";
 import { Link } from "react-router-dom";
 
 const Dashboard = () => {
+  useEffect(() => {
+    notify("Welcome to the Dashboard!", "success");
+  }, []);
   return (
     <Box p={useBreakpointValue({ base: 4, md: 8 })}>
       <Heading as="h1" mb={6}>Dashboard</Heading>

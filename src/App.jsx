@@ -1,5 +1,6 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { useBreakpointValue } from "@chakra-ui/react";
+import Notification from "./components/Notification.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Sidebar from "./components/Sidebar.jsx";
 import { Box } from "@chakra-ui/react";
@@ -22,6 +23,7 @@ import CollaborativeEditor from "./components/CollaborativeEditor.jsx";
 function App() {
   return (
     <Router>
+      <Notification />
       <Navbar />
       <Box display="flex">
         <Sidebar />
