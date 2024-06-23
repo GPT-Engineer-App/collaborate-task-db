@@ -1,4 +1,4 @@
-import { Box, Flex, Input, InputGroup, InputRightElement, IconButton, Select } from "@chakra-ui/react";
+import { Box, Flex, Input, InputGroup, InputRightElement, IconButton, Select, useBreakpointValue } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import NavLink from "./NavLink.jsx";
 
@@ -20,10 +20,15 @@ const Navbar = () => {
     // Implement search logic here
     console.log(`Searching for ${searchQuery} with filter ${filter}`);
   };
+  const selectSize = useBreakpointValue({ base: "sm", md: "md" });
+  const inputGroupWidth = useBreakpointValue({ base: "200px", md: "300px" });
+  const inputSize = useBreakpointValue({ base: "sm", md: "md" });
+  const iconButtonSize = useBreakpointValue({ base: "sm", md: "md" });
+
   return (
     <Box bg="blue.500" color="white" px={4} py={2} position="fixed" top="0" width="100%" zIndex="1000">
-      <Flex justify="space-between" align="center">
-        <Flex>
+      <Flex justify="space-between" align="center" wrap="wrap">
+        <Flex align="center" wrap="wrap">
           <NavLink to="/dashboard">Dashboard</NavLink>
           <NavLink to="/task-management">Tasks</NavLink>
           <NavLink to="/group-management">Groups</NavLink>
@@ -33,18 +38,18 @@ const Navbar = () => {
           <NavLink to="/slack-integration">Slack</NavLink>
           <NavLink to="/trello-integration">Trello</NavLink>
         </Flex>
-        <Flex>
-          <Select placeholder="Filter" value={filter} onChange={handleFilterChange} bg="white" color="black" mr={2}>
+        <Flex mt={{ base: 2, md: 0 }} align="center" wrap="wrap">
+          <Select placeholder="Filter" value={filter} onChange={handleFilterChange} bg="white" color="black" mr={2} size={selectSize}>
             <option value="all">All</option>
             <option value="tasks">Tasks</option>
             <option value="files">Files</option>
             <option value="groups">Groups</option>
             <option value="profiles">Profiles</option>
           </Select>
-          <InputGroup width="300px">
-            <Input placeholder="Search tasks and files" value={searchQuery} onChange={handleSearchChange} />
+          <InputGroup width={inputGroupWidth}>
+            <Input placeholder="Search tasks and files" value={searchQuery} onChange={handleSearchChange} size={inputSize} />
             <InputRightElement>
-              <IconButton aria-label="Search" icon={<SearchIcon />} onClick={handleSearch} />
+              <IconButton aria-label="Search" icon={<SearchIcon />} onClick={handleSearch} size={iconButtonSize} />
             </InputRightElement>
           </InputGroup>
         </Flex>
