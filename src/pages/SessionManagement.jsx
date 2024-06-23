@@ -11,7 +11,7 @@ const SessionManagement = () => {
   };
 
   return (
-    <Box p={4}>
+    <Box p={useBreakpointValue({ base: 4, md: 8 })}>
       <Heading as="h1" mb={6}>Session Management</Heading>
       <VStack spacing={4} align="start">
         <Input placeholder="New Session" value={newSession} onChange={(e) => setNewSession(e.target.value)} />

@@ -11,7 +11,7 @@ const DatabaseOptimization = () => {
   };
 
   return (
-    <Box p={4}>
+    <Box p={useBreakpointValue({ base: 4, md: 8 })}>
       <Heading as="h1" mb={6}>Database Optimization Interface</Heading>
       <VStack spacing={4} align="start">
         <FormControl id="table">

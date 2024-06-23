@@ -1,8 +1,8 @@
-import { Box, Heading, Text, VStack } from "@chakra-ui/react";
+import { Box, Heading, Text, VStack, useBreakpointValue } from "@chakra-ui/react";
 
 const DatabaseUsabilityAnalysis = () => {
   return (
-    <Box p={4}>
+    <Box p={useBreakpointValue({ base: 4, md: 8 })}>
       <Heading as="h1" mb={6}>Database Usability Analysis</Heading>
       <VStack spacing={4} align="start">
         <Text fontSize="lg">

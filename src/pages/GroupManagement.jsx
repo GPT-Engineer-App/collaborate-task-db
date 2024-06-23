@@ -11,7 +11,7 @@ const GroupManagement = () => {
   };
 
   return (
-    <Box p={4}>
+    <Box p={useBreakpointValue({ base: 4, md: 8 })}>
       <Heading as="h1" mb={6}>Group Management</Heading>
       <VStack spacing={4} align="start">
         <Input placeholder="New Group" value={newGroup} onChange={(e) => setNewGroup(e.target.value)} />
