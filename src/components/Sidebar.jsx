@@ -1,7 +1,24 @@
-import { Box, VStack, Button, Collapse, useDisclosure } from "@chakra-ui/react";
+import { Box, VStack, Button, Collapse, useDisclosure, Select, Input } from "@chakra-ui/react";
 import SidebarLink from "./SidebarLink.jsx";
 
+import { useState } from "react";
+
 const Sidebar = () => {
+  const [filter, setFilter] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleFilterChange = (e) => {
+    setFilter(e.target.value);
+  };
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleSearch = () => {
+    // Implement search logic here
+    console.log(`Searching for ${searchQuery} with filter ${filter}`);
+  };
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -11,10 +28,16 @@ const Sidebar = () => {
           {isOpen ? "Hide Filters" : "Show Filters"}
         </Button>
         <Collapse in={isOpen} animateOpacity>
-          <VStack align="start" spacing={2}>
-            <SidebarLink to="/task-management?filter=category">Filter by Category</SidebarLink>
-            <SidebarLink to="/task-management?filter=priority">Filter by Priority</SidebarLink>
-            <SidebarLink to="/task-management?filter=status">Filter by Status</SidebarLink>
+          <VStack align="start" spacing={2} width="100%">
+            <Select placeholder="Filter" value={filter} onChange={handleFilterChange} bg="white" color="black">
+              <option value="all">All</option>
+              <option value="tasks">Tasks</option>
+              <option value="files">Files</option>
+              <option value="groups">Groups</option>
+              <option value="profiles">Profiles</option>
+            </Select>
+            <Input placeholder="Search" value={searchQuery} onChange={handleSearchChange} bg="white" color="black" />
+            <Button colorScheme="blue" onClick={handleSearch} width="100%">Search</Button>
           </VStack>
         </Collapse>
         <SidebarLink to="/recent-activities">Recent Activities</SidebarLink>
