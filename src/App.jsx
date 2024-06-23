@@ -19,6 +19,9 @@ import CategoryManagement from "./pages/CategoryManagement.jsx";
 import Chat from "./components/Chat.jsx";
 import FileSharing from "./components/FileSharing.jsx";
 import CollaborativeEditor from "./components/CollaborativeEditor.jsx";
+import GoogleDriveIntegration from "./components/GoogleDriveIntegration.jsx";
+import SlackIntegration from "./components/SlackIntegration.jsx";
+import TrelloIntegration from "./components/TrelloIntegration.jsx";
 
 function App() {
   return (
@@ -44,6 +47,9 @@ function App() {
             <Route path="/chat" element={<Chat />} />
             <Route path="/file-sharing" element={<FileSharing />} />
             <Route path="/collaborative-editor" element={<CollaborativeEditor />} />
+            <Route path="/google-drive-integration" element={<GoogleDriveIntegration />} />
+            <Route path="/slack-integration" element={<SlackIntegration />} />
+            <Route path="/trello-integration" element={<TrelloIntegration />} />
           </Routes>
         </Box>
       </Box>

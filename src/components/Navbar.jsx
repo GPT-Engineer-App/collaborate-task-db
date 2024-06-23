@@ -29,6 +29,9 @@ const Navbar = () => {
           <NavLink to="/group-management">Groups</NavLink>
           <NavLink to="/file-management">Files</NavLink>
           <NavLink to="/user-profiles">Profile</NavLink>
+          <NavLink to="/google-drive-integration">Google Drive</NavLink>
+          <NavLink to="/slack-integration">Slack</NavLink>
+          <NavLink to="/trello-integration">Trello</NavLink>
         </Flex>
         <Flex>
           <Select placeholder="Filter" value={filter} onChange={handleFilterChange} bg="white" color="black" mr={2}>
