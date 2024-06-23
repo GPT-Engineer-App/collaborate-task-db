@@ -22,14 +22,14 @@ const Navbar = () => {
   };
 
   return (
-    <Box bg="blue.500" color="white" px={4} py={2} position="fixed" top="0" width="100%" zIndex="1000">
+    <Box bg="blue.500" color="white" px={4} py={2} position="fixed" top="0" width="100%" zIndex="1000" boxShadow="md">
       <Flex justify="space-between" align="center">
         <Flex display={{ base: "none", md: "flex" }}>
-          <NavLink to="/dashboard">Dashboard</NavLink>
-          <NavLink to="/task-management">Tasks</NavLink>
-          <NavLink to="/group-management">Groups</NavLink>
-          <NavLink to="/file-management">Files</NavLink>
-          <NavLink to="/user-profiles">Profile</NavLink>
+          <NavLink to="/dashboard" _hover={{ color: "gray.300" }} transition="color 0.2s">Dashboard</NavLink>
+          <NavLink to="/task-management" _hover={{ color: "gray.300" }} transition="color 0.2s">Tasks</NavLink>
+          <NavLink to="/group-management" _hover={{ color: "gray.300" }} transition="color 0.2s">Groups</NavLink>
+          <NavLink to="/file-management" _hover={{ color: "gray.300" }} transition="color 0.2s">Files</NavLink>
+          <NavLink to="/user-profiles" _hover={{ color: "gray.300" }} transition="color 0.2s">Profile</NavLink>
         </Flex>
         <Flex>
           <Select placeholder="Filter" value={filter} onChange={handleFilterChange} bg="white" color="black" mr={2}>
@@ -57,12 +57,12 @@ const Navbar = () => {
       </Flex>
       {isMobile && (
         <Collapse in={isOpen} animateOpacity>
-          <Flex direction="column" mt={4}>
-            <NavLink to="/dashboard">Dashboard</NavLink>
-            <NavLink to="/task-management">Tasks</NavLink>
-            <NavLink to="/group-management">Groups</NavLink>
-            <NavLink to="/file-management">Files</NavLink>
-            <NavLink to="/user-profiles">Profile</NavLink>
+          <Flex direction="column" mt={4} align="center">
+            <NavLink to="/dashboard" _hover={{ color: "gray.300" }} transition="color 0.2s" mb={2}>Dashboard</NavLink>
+            <NavLink to="/task-management" _hover={{ color: "gray.300" }} transition="color 0.2s" mb={2}>Tasks</NavLink>
+            <NavLink to="/group-management" _hover={{ color: "gray.300" }} transition="color 0.2s" mb={2}>Groups</NavLink>
+            <NavLink to="/file-management" _hover={{ color: "gray.300" }} transition="color 0.2s" mb={2}>Files</NavLink>
+            <NavLink to="/user-profiles" _hover={{ color: "gray.300" }} transition="color 0.2s" mb={2}>Profile</NavLink>
           </Flex>
         </Collapse>
       )}
