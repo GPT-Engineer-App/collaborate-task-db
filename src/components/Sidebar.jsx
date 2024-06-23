@@ -1,4 +1,4 @@
-import { Box, VStack, Button, Collapse, useDisclosure, Select, Input, useBreakpointValue } from "@chakra-ui/react";
+import { Box, VStack, Button, Collapse, useDisclosure, Select, Input } from "@chakra-ui/react";
 import SidebarLink from "./SidebarLink.jsx";
 
 import { useState } from "react";
@@ -7,8 +7,6 @@ const Sidebar = () => {
   const [filter, setFilter] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
 
-  const { isOpen, onToggle } = useDisclosure();
-  
   const handleFilterChange = (e) => {
     setFilter(e.target.value);
   };
@@ -21,8 +19,10 @@ const Sidebar = () => {
     // Implement search logic here
     console.log(`Searching for ${searchQuery} with filter ${filter}`);
   };
+  const { isOpen, onToggle } = useDisclosure();
+
   return (
-    <Box bg="gray.100" width={useBreakpointValue({ base: "100%", md: "250px" })} position="fixed" top="60px" bottom="0" overflowY="auto">
+    <Box bg="gray.100" width="250px" position="fixed" top="60px" bottom="0" overflowY="auto">
       <VStack align="start" p={4}>
         <Button onClick={onToggle} width="100%">
           {isOpen ? "Hide Filters" : "Show Filters"}
