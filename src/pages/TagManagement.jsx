@@ -1,4 +1,4 @@
-import { Box, Heading, VStack, Text, Input, Button } from "@chakra-ui/react";
+import { Box, Heading, VStack, Text, Input, Button, useBreakpointValue } from "@chakra-ui/react";
 import { useState } from "react";
 
 const TagManagement = () => {

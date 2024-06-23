@@ -1,4 +1,4 @@
-import { Container, Text, VStack, Button } from "@chakra-ui/react";
+import { Container, Text, VStack, Button, useBreakpointValue } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import Breadcrumbs from "../components/Breadcrumbs.jsx";
 
